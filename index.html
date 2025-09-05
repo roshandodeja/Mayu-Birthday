@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday, My Love 🎂</title>
-  <meta name="description" content="A romantic, fun, and elegant one‑page birthday surprise with countdown, memory timeline, password‑protected love letter, treasure hunt, and timed reveal."/>
+  <meta name="description" content="A romantic, fun, and elegant one-page birthday surprise with countdown, memory timeline, password-protected love letter, treasure hunt, and timed reveal."/>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,9 +113,9 @@
   <!-- HERO / COUNTDOWN -->
   <header class="hero hero-stars">
     <div class="hero-inner container">
-      <p class="tag">Happy Birthday <span style="color:var(--accent);font-weight:700">/* TODO: Her Name */</span> ✨</p>
+      <p class="tag">Happy Birthday <span style="color:var(--accent);font-weight:700">Mayu</span> ✨</p>
       <h1>Every second to you is my favorite countdown.</h1>
-      <p class="muted">A little website made with ridiculous amounts of Boobly love.</p>
+      <p class="muted">A little website made with ridiculous amounts of love.</p>
 
       <div id="countdown" class="countdown" aria-live="polite">
         <div class="time"><b id="d">00</b><span>Days</span></div>
@@ -137,16 +137,20 @@
       <p class="muted">A few moments that made us, us.</p>
       <div class="timeline spaced">
         <div class="t-item">
+          <h3>DYU Art Cafe</h3>
+          <p class="muted">Where it all began – our very first meeting. ❤️</p>
+        </div>
+        <div class="t-item">
           <h3>That first laugh</h3>
-          <p class="muted">The day we forgot the world existed. /* TODO: Replace with your memory */</p>
+          <p class="muted">The day we forgot the world existed.</p>
         </div>
         <div class="t-item">
-          <h3>Our tiny adventure</h3>
-          <p class="muted">A long walk, short breaths, and a forever feeling.</p>
+          <h3>April’s Magic</h3>
+          <p class="muted">The month that became our forever memory.</p>
         </div>
         <div class="t-item">
-          <h3>Rain + chai + you</h3>
-          <p class="muted">I understood cozy because of you.</p>
+          <h3>Dal Chawal Nights</h3>
+          <p class="muted">Because nothing says comfort like your favourite meal with me.</p>
         </div>
       </div>
     </section>
@@ -162,7 +166,7 @@
           <input id="pw" class="input" type="password" placeholder="Your pet name for her"/>
           <button id="unlock" class="spaced">Unlock Letter</button>
           <p id="pwmsg" class="muted spaced" role="status"></p>
-          <p class="pill spaced">Hint: /* TODO: add a gentle hint she knows */</p>
+          <p class="pill spaced">Hint: What I always call you ❤️</p>
         </div>
         <div class="muted">
           This letter is just for your eyes, my love. Take a breath. Read slowly.
@@ -170,11 +174,12 @@
       </div>
 
       <article id="letter-body" class="glass spaced hidden" aria-hidden="true">
-        <h3>My favorite human,</h3>
-        <p>I love how you crinkle your eyes when you laugh, and how you make the ordinary look magical. You are my calm in chaos, my loudest cheer, and the softest place I know.</p>
-        <p>Today I want to promise three things: to choose you on the easy days, to fight for us on the hard ones, and to keep learning the language of your heart.</p>
-        <p>Happy Birthday, <em>/* TODO: her nickname */</em>. Thank you for being my best chapter.</p>
-        <p>Always yours,<br/>/* TODO: Your name */</p>
+        <h3>My dearest Mayu,</h3>
+        <p>From that very first day at DYU Art Cafe, I knew something magical had begun. Every laugh, every walk, every chai in the rain – they’ve all been threads weaving the most beautiful story of us.</p>
+        <p>You are my calm in chaos, my cheer in silence, and the softest place I know. With you, April turned into forever, and dal chawal became a love language.</p>
+        <p>Today, I promise to choose you on the easy days, fight for us on the hard ones, and keep learning the language of your heart – endlessly.</p>
+        <p>Happy Birthday, my Mayu. Thank you for being my best chapter.</p>
+        <p>Always yours,<br/>Boobly</p>
       </article>
     </section>
 
@@ -187,20 +192,26 @@
         <div id="q1" class="glass" style="padding:16px">
           <b>Clue 1:</b> Where did we first meet?
           <input id="a1" class="input spaced" placeholder="type answer"/>
-          <button data-next="q2" data-input="a1" data-answer="/* TODO: e.g. collegecafe */">Submit</button>
+          <button data-next="q2" data-input="a1" data-answer="dyuartcafe">Submit</button>
           <p class="muted spaced" id="m1"></p>
         </div>
         <div id="q2" class="glass hidden" style="padding:16px">
           <b>Clue 2:</b> My nickname for you?
           <input id="a2" class="input spaced" placeholder="type answer"/>
-          <button data-next="q3" data-input="a2" data-answer="/* TODO: e.g. starlight */">Submit</button>
+          <button data-next="q3" data-input="a2" data-answer="mayu">Submit</button>
           <p class="muted spaced" id="m2"></p>
         </div>
         <div id="q3" class="glass hidden" style="padding:16px">
-          <b>Clue 3:</b> Our song (one word)?
+          <b>Clue 3:</b> The month of our first date?
           <input id="a3" class="input spaced" placeholder="type answer"/>
-          <button data-next="final" data-input="a3" data-answer="/* TODO: e.g. perfect */">Submit</button>
+          <button data-next="q4" data-input="a3" data-answer="april">Submit</button>
           <p class="muted spaced" id="m3"></p>
+        </div>
+        <div id="q4" class="glass hidden" style="padding:16px">
+          <b>Clue 4:</b> Your favourite comfort food?
+          <input id="a4" class="input spaced" placeholder="type answer"/>
+          <button data-next="final" data-input="a4" data-answer="dalchawal">Submit</button>
+          <p class="muted spaced" id="m4"></p>
         </div>
       </div>
 
@@ -208,7 +219,7 @@
         <h3>You did it! 🎉</h3>
         <p>Here is your <b>digital gift</b>:
           <br/>
-          <a id="gift-link" href="#" target="_blank">/* TODO: paste Google Drive/YouTube link */</a>
+          <a id="gift-link" href="#" target="_blank">Surprise Link 💝</a>
         </p>
       </div>
     </section>
@@ -230,27 +241,23 @@
         <p>Your real gift is waiting. (And yes, I’m grinning.)</p>
         <video id="reveal-video" controls class="spaced" style="width:100%; border-radius:12px">
           <source src="" type="video/mp4">
-          <!-- TODO: drop a short mp4 message, or leave empty -->
         </video>
       </div>
     </section>
   </main>
 
   <footer>
-    Made with <span class="heart">♥</span> for <b>/* TODO: Her Name */</b>. &nbsp; © <span id="year"></span>
+    Made with <span class="heart">♥</span> for <b>Mayu</b>. &nbsp; © <span id="year"></span>
   </footer>
 
   <div id="confetti" class="confetti" aria-hidden="true"></div>
 
   <script>
-    // ======= CONFIG (EDIT THESE) =======
-    const HER_NAME = "/* TODO: Her Name */";
-    const REVEAL_AT = "2025-09-07T19:00:00+05:30"; // 7:00 PM IST on Sept 7, 2025
-    const MAIN_EVENT_AT = "2025-09-07T00:00:00+05:30"; // midnight for hero countdown
-
-    // Set a password hash for the love letter. Generate from your chosen password.
-    // Visit your browser console and run: await digestToHex('yourpassword') then paste here.
-    const LETTER_PW_SHA256_HEX = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"; // TODO replace (this is SHA-256 of empty string)
+    // ======= CONFIG =======
+    const HER_NAME = "Mayu";
+    const REVEAL_AT = "2025-09-07T19:00:00+05:30"; // 7:00 PM IST
+    const MAIN_EVENT_AT = "2025-09-07T00:00:00+05:30"; // midnight
+    const LETTER_PW_SHA256_HEX = "631a93ea856938722b42098f0f4758c9a0bc619e5512963b15eeb2638bfc84f7"; // hash of "Mayu"
 
     // ======= UTIL =======
     const $ = s => document.querySelector(s);
@@ -270,7 +277,7 @@
 
     function setCountdown(elPrefix, targetISO){
       function tick(){
-        const {ms,d,h,m,s} = diff(targetISO);
+        const {d,h,m,s} = diff(targetISO);
         $(`#${elPrefix}d`).textContent = pad(d);
         $(`#${elPrefix}h`).textContent = pad(h);
         $(`#${elPrefix}m`).textContent = pad(m);
@@ -280,14 +287,12 @@
       return setInterval(tick, 1000);
     }
 
-    // Web Crypto helpers
     async function sha256Hex(str){
       const enc = new TextEncoder();
       const data = enc.encode(str);
       const hash = await crypto.subtle.digest('SHA-256', data);
       return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
     }
-    async function digestToHex(pw){ return sha256Hex(pw); }
 
     function celebrate(){
       const root = $('#confetti');
@@ -306,12 +311,9 @@
 
     // ======= INIT =======
     $('#year').textContent = new Date().getFullYear();
-
-    // Main hero countdown and reveal countdown
     setCountdown('', MAIN_EVENT_AT);
     const mini = setCountdown('r', REVEAL_AT);
 
-    // Timed reveal lock
     function checkReveal(){
       const now = new Date();
       if(now >= new Date(REVEAL_AT)){
@@ -334,18 +336,17 @@
         body.setAttribute('aria-hidden','false');
         localStorage.setItem('letterUnlocked','1');
       } else {
-        $('#pwmsg').textContent = 'That did not work, my love. Try our special word.';
+        $('#pwmsg').textContent = 'That did not work, my love. Try again ♥';
       }
     });
 
-    // Persist letter unlock
     if(localStorage.getItem('letterUnlocked')==='1'){
       $('#lockbox').classList.add('hidden');
       $('#letter-body').classList.remove('hidden');
       $('#letter-body').setAttribute('aria-hidden','false');
     }
 
-    // Treasure hunt flow (case-insensitive, trim; developer note: answers must be lowercase, no spaces)
+    // Treasure hunt
     $$('button[data-next]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const nextId = btn.getAttribute('data-next');
@@ -353,10 +354,6 @@
         const answer = (btn.getAttribute('data-answer')||'').toLowerCase().trim();
         const val = (($('#'+inputId).value)||'').toLowerCase().replace(/\s+/g,'').trim();
         const msg = $('#m'+inputId.replace('a',''));
-        if(!answer || answer==='/* todo: e.g. collegecafe */'.toLowerCase()){
-          alert('Developer: set the correct answer in the HTML (data-answer attribute)');
-          return;
-        }
         if(val === answer){
           msg.textContent = 'Correct!';
           $('#'+nextId).classList.remove('hidden');
@@ -370,14 +367,8 @@
       });
     });
 
-    // Persist treasure hunt completion
     if(localStorage.getItem('huntComplete')==='1'){
       $('#final').classList.remove('hidden');
-    }
-
-    // Tiny UX: replace name tokens if user filled HER_NAME
-    if(Mayu && !Mayu.includes('TODO')){
-      document.body.innerHTML = document.body.innerHTML.replaceAll('/* TODO: Her Name */', HER_NAME);
     }
   </script>
 </body>
