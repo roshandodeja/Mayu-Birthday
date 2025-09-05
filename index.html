@@ -179,45 +179,42 @@
     </section>
 
     <!-- TREASURE HUNT -->
-    <section id="hunt" class="card">
-      <h2>The Treasure Hunt 🔎</h2>
-      <p class="muted">Answer each clue to move forward. Keep it lowercase, no spaces.</p>
+   section id="treasure-hunt">
+  <h2>The Treasure Hunt 🔎</h2>
 
-      <div class="grid">
-        <div id="q1" class="glass" style="padding:16px">
-          <b>Clue 1:</b> Our story began where art and coffee met. What’s the name of the place where I first saw you?
-          <input id="a1" class="input spaced" placeholder="type answer"/>
-          <button data-next="q2" data-input="a1" data-answer="DYU Art Cafe">Submit</button>
-          <p class="muted spaced" id="m1"></p>
-        </div>
-        <div id="q2" class="glass hidden" style="padding:16px">
-          <b>Clue 2:</b> Only I can call you this. The name that makes you blush whenever I whisper it. What is it?
-          <input id="a2" class="input spaced" placeholder="type answer"/>
-          <button data-next="q3" data-input="a2" data-answer="Mayu">Submit</button>
-          <p class="muted spaced" id="m2"></p>
-        </div>
-        <div id="q3" class="glass hidden" style="padding:16px">
-          <b>Clue 3:</b> The month when our hearts first beat together on a date. The one that will always feel like the beginning of us.
-          <input id="a3" class="input spaced" placeholder="type answer"/>
-          <button data-next="final" data-input="a3" data-answer="April">Submit</button>
-          <p class="muted spaced" id="m3"></p>
-        </div>
-        <div id="q3" class="glass hidden" style="padding:16px">
-          <b>Clue 3:</b> Our song (one word)?
-          <input id="a3" class="input spaced" placeholder="type answer"/>
-          <button data-next="final" data-input="a3" data-answer="/* TODO: e.g. perfect */">Submit</button>
-          <p class="muted spaced" id="m3"></p>
-        </div>
-      </div>
+  <div class="clue" id="clue1">
+    <p>Clue 1: Our story began where art and coffee met. What’s the name of the place where I first saw you?</p>
+    <input type="text" id="answer1" placeholder="dyuartcafe">
+    <button onclick="checkClue1()">Submit</button>
+    <p id="result1"></p>
+  </div>
 
-      <div id="final" class="glass hidden spaced" style="padding:18px">
-        <h3>You did it! 🎉</h3>
-        <p>Here is your <b>digital gift</b>:
-          <br/>
-          <a id="gift-link" href="#" target="_blank">/* TODO: paste Google Drive/YouTube link */</a>
-        </p>
-      </div>
-    </section>
+  <div class="clue" id="clue2" style="display:none;">
+    <p>Clue 2: Only I can call you this. The name that makes you blush whenever I whisper it. What is it?</p>
+    <input type="text" id="answer2" placeholder="Type your answer...">
+    <button onclick="checkClue2()">Submit</button>
+    <p id="result2"></p>
+  </div>
+
+  <div class="clue" id="clue3" style="display:none;">
+    <p>Clue 3: The month when our hearts first beat together on a date. Which month was it?</p>
+    <input type="text" id="answer3" placeholder="Type your answer...">
+    <button onclick="checkClue3()">Submit</button>
+    <p id="result3"></p>
+  </div>
+
+  <div class="clue" id="clue4" style="display:none;">
+    <p>Final Clue: No birthday of yours is complete without your comfort food. Type the dish that makes you happiest.</p>
+    <input type="text" id="answer4" placeholder="Type your answer...">
+    <button onclick="checkClue4()">Submit</button>
+    <p id="result4"></p>
+  </div>
+
+  <div id="treasureGift" style="display:none; margin-top:20px;">
+    <p>Congratulations, Mayu! ❤️ You’ve solved every clue, just like you’ve solved every part of me.</p>
+    <a href="gift/happy-birthday.mp4" target="_blank">🎁 Open Your Surprise</a>
+  </div>
+</section>
 
     <!-- TIMED REVEAL -->
     <section id="reveal" class="card">
