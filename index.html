@@ -1,377 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Happy Birthday, My Love Mayu 🎂</title>
-  <meta name="description" content="A romantic, fun, and elegant one-page birthday surprise with countdown, memory timeline, password-protected love letter, treasure hunt, and timed reveal."/>
-
-   <img src="images/mayu.jpg" alt="Mayu" 
-       style="max-width:180px; border-radius:50%; margin:15px auto; display:block; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Mayu ❤️</title>
   <style>
-    :root {
-      --bg: #0f0f12;
-      --card: #15151a;
-      --muted: #a9a9b2;
-      --text: #f6f6f9;
-      --accent: #ff6b9e; /* blush pink */
-      --accent-2: #f6c453; /* soft gold */
-      --ring: rgba(255,107,158,.35);
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    * { box-sizing: border-box }
-    html, body { height: 100%; }
     body {
-      margin: 0; background: radial-gradient(90vw 90vh at 10% 10%, #12121a, #0b0b0e) fixed;
-      color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      line-height: 1.6; scroll-behavior: smooth;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      padding: 20px;
     }
-    h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.2; margin: 0 0 .6rem }
-    h1 { font-size: clamp(2.1rem, 4vw, 3.2rem); }
-    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
-    p { margin: 0 0 1rem }
-
-    .container { max-width: 1000px; margin: 0 auto; padding: 28px; }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: clamp(16px, 3vw, 26px);
-      backdrop-filter: blur(6px);
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    .glass {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
     }
-    .hero { min-height: 80vh; display: grid; place-items: center; position: relative; overflow: hidden; }
-    .hero-stars::before, .hero-stars::after { content: ""; position: absolute; inset: -20%; background: radial-gradient(circle at 20% 30%, rgba(246,196,83,.12), transparent 40%), radial-gradient(circle at 80% 60%, rgba(255,107,158,.10), transparent 40%); filter: blur(20px); z-index: 0; }
-    .hero-inner { position: relative; z-index: 1; text-align: center; }
-    .tag { display: inline-flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: var(--muted); }
-    .countdown { font-variant-numeric: tabular-nums; display: grid; grid-auto-flow: column; gap: clamp(10px, 2vw, 18px); margin-top: 16px; }
-    .time {
-      min-width: 72px; padding: 12px 14px; border-radius: 14px; text-align: center; background: #121218; border: 1px solid rgba(255,255,255,.06);
+    input, button {
+      margin: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
     }
-    .time b { display: block; font-size: clamp(1.2rem, 4vw, 2rem); font-weight: 700; }
-    .time span { font-size: .8rem; color: var(--muted); }
-
-    nav { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); background: rgba(15,15,18,.6); border-bottom: 1px solid rgba(255,255,255,.06); }
-    nav .row { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
-    nav a { color: var(--muted); text-decoration: none; padding: 12px 10px; border-radius: 10px; }
-    nav a:hover { color: var(--text); background: rgba(255,255,255,.06) }
-
-    .grid { display: grid; gap: 18px }
-    @media (min-width: 800px){ .grid.cols-2 { grid-template-columns: 1fr 1fr } }
-
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before { content: ""; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--accent), transparent); opacity: .7 }
-    .t-item { position: relative; padding: 12px 12px 12px 16px; margin: 8px 0; border-radius: 12px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02) }
-    .t-item::before { content: ""; position: absolute; left: -23px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent) }
-    .muted { color: var(--muted) }
-
-    .input, button {
-      appearance: none; border: 1px solid rgba(255,255,255,.14); background: #121218; color: var(--text);
-      border-radius: 12px; padding: 12px 14px; font: inherit; transition: .2s border, .2s transform;
+    button {
+      background: #ff5a7d;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
-    .input:focus { outline: none; border-color: var(--accent) }
-    button { cursor: pointer; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: none; font-weight: 700 }
-    button:hover { transform: translateY(-1px) }
-
-    .locked { filter: grayscale(.25) opacity(.9) }
-    .hidden { display: none !important }
-    .center { text-align: center }
-    .spaced { margin-top: 14px }
-    .pill { border-radius: 999px; padding: 8px 12px; border: 1px dashed rgba(255,255,255,.2); color: var(--muted) }
-
-    footer { color: var(--muted); text-align: center; padding: 30px 0 40px }
-    .heart { color: var(--accent) }
-
-    /* Simple confetti (emoji) */
-    .confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden }
-    .confetti span { position: absolute; top: -10vh; animation: fall linear forwards; font-size: 18px }
-    @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: .95 } }
+    button:hover {
+      background: #ff2a5d;
+    }
+    #loveLetter {
+      display: none;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container row">
-      <strong>💖Mayu's Day💖</strong>
-      <div class="row">
-        <a href="#memories">Memories</a>
-        <a href="#letter">Love Letter</a>
-        <a href="#hunt">Treasure Hunt</a>
-        <a href="#reveal">Reveal</a>
-      </div>
+  <h1>Happy Birthday, Mayu ❤️</h1>
+  <p>My love, today we celebrate you 🎂✨</p>
+
+  <!-- 🎉 Countdown Section -->
+  <section id="countdown">
+    <h2>Birthday Countdown 🎂</h2>
+    <p id="timer"></p>
+  </section>
+
+  <!-- 💌 Love Letter Section -->
+  <section id="letter">
+    <h2>💌 Your Love Letter</h2>
+    <p>Enter the secret password to unlock my words just for you:</p>
+    <input type="password" id="letterPassword" placeholder="Enter password...">
+    <button onclick="unlockLetter()">Unlock</button>
+    <div id="loveLetter">
+      <p>My dearest Mayu,</p>
+      <p>From the moment we first met at DYU Art Cafe, my world has never been the same.  
+      April will always be the month my heart found a home in you. Every little smile, every shared silence, every Dal Chawal meal together feels like magic because it’s with you.  
+      You are my joy, my comfort, my forever. On this birthday, I want to remind you that my love for you is endless, growing stronger with each passing day.</p>
+      <p>Forever yours, <br>Roshan ❤️</p>
     </div>
-  </nav>
+  </section>
 
-  <!-- HERO / COUNTDOWN -->
-  <header class="hero hero-stars">
-    <div class="hero-inner container">
-      <p class="tag">✨Happy Birthday <span style="color:var(--accent);font-weight:700">Mayu</span>✨</p>
-      <h1>Every second to you is my favorite countdown.💖</h1>
-      <p class="muted">A little website made with ridiculous amounts of love.💖</p>
+  <!-- 🔎 Treasure Hunt Section -->
+  <section id="treasure-hunt">
+    <h2>The Treasure Hunt 🔎</h2>
 
-      <div id="countdown" class="countdown" aria-live="polite">
-        <div class="time"><b id="d">00</b><span>Days</span></div>
-        <div class="time"><b id="h">00</b><span>Hours</span></div>
-        <div class="time"><b id="m">00</b><span>Mins</span></div>
-        <div class="time"><b id="s">00</b><span>Secs</span></div>
-      </div>
-
-      <div class="spaced">
-        <a href="#memories"><button>Start the Journey →</button></a>
-      </div>
+    <div class="clue" id="clue1">
+      <p>Clue 1: Our story began where art and coffee met. What’s the name of the place where I first saw you?</p>
+      <input type="text" id="answer1" placeholder="Type your answer...">
+      <button onclick="checkClue1()">Submit</button>
+      <p id="result1"></p>
     </div>
-  </header>
 
-  <main class="container grid">
-    <!-- MEMORIES -->
-    <section id="memories" class="card">
-      <h2>Our Memory Timeline 📸</h2>
-      <p class="muted">A few moments that made us, us.</p>
-      <div class="timeline spaced">
-        <div class="t-item">
-          <h3>DYU Art Cafe</h3>
-          <p class="muted">Where it all began – our very first meeting. ❤️</p>
-        </div>
-        <div class="t-item">
-          <h3>That first laugh</h3>
-          <p class="muted">The day we forgot the world existed.</p>
-        </div>
-        <div class="t-item">
-          <h3>April’s Magic</h3>
-          <p class="muted">The month that became our forever memory.</p>
-        </div>
-        <div class="t-item">
-          <h3>Dal Chawal Nights</h3>
-          <p class="muted">Because nothing says comfort like your favourite meal with me.</p>
-        </div>
-      </div>
-    </section>
+    <div class="clue" id="clue2" style="display:none;">
+      <p>Clue 2: Only I can call you this. The name that makes you blush whenever I whisper it. What is it?</p>
+      <input type="text" id="answer2" placeholder="Type your answer...">
+      <button onclick="checkClue2()">Submit</button>
+      <p id="result2"></p>
+    </div>
 
-    <!-- PASSWORD LOVE LETTER -->
-    <section id="letter" class="card">
-      <h2>Love Letter 💌</h2>
-      <p class="muted">Enter our secret code to open this letter.💖</p>
+    <div class="clue" id="clue3" style="display:none;">
+      <p>Clue 3: The month when our hearts first beat together on a date. Which month was it?</p>
+      <input type="text" id="answer3" placeholder="Type your answer...">
+      <button onclick="checkClue3()">Submit</button>
+      <p id="result3"></p>
+    </div>
 
-      <div id="lockbox" class="grid cols-2 spaced">
-        <div>
-          <label for="pw" class="muted">Password</label>
-          <input id="pw" class="input" type="password" placeholder="Your pet name for her"/>
-          <button id="unlock" class="spaced">Unlock Letter</button>
-          <p id="pwmsg" class="muted spaced" role="status"></p>
-          <p class="pill spaced">Hint: What I always call you ❤️</p>
-        </div>
-        <div class="muted">
-          This letter is just for your eyes, my love. Take a breath. Read slowly.
-        </div>
-      </div>
+    <div class="clue" id="clue4" style="display:none;">
+      <p>Final Clue: No birthday of yours is complete without your comfort food. Type the dish that makes you happiest.</p>
+      <input type="text" id="answer4" placeholder="Type your answer...">
+      <button onclick="checkClue4()">Submit</button>
+      <p id="result4"></p>
+    </div>
 
-      <article id="letter-body" class="glass spaced hidden" aria-hidden="true">
-        <h3>My dearest Mayu,</h3>
-        <p>From that very first day at DYU Art Cafe, I knew something magical had begun. Every laugh, every walk, every chai in Jaggu ki Chai– they’ve all been threads weaving the most beautiful story of us.</p>
-        <p>You are my calm in chaos, my cheer in silence, and the softest place I know. With you, April turned into forever, and dal chawal became a love language.</p>
-        <p>Today, I promise to choose you on the easy days, fight for us on the hard ones, and keep learning the language of your heart – endlessly.</p>
-        <p>Happy Birthday, my Mayu.💖 Thank you for being my best chapter and best Girlfriend.💖</p>
-        <p>Always yours,<br/>Rosh💖</p>
-      </article>
-    </section>
-
-    <!-- TREASURE HUNT -->
-    <section id="hunt" class="card">
-      <h2>The Treasure Hunt 🔎</h2>
-      <p class="muted">Answer each clue to move forward. Keep it lowercase, no spaces.</p>
-
-      <div class="grid">
-        <div id="q1" class="glass" style="padding:16px">
-          <b>Clue 1:</b> Our story began where art and coffee met. What’s the name of the place where I first saw you?
-          <input id="a1" class="input spaced" placeholder="type answer"/>
-          <button data-next="q2" data-input="a1" data-answer="dyuartcafe">Submit</button>
-          <p class="muted spaced" id="m1"></p>
-        </div>
-        <div id="q2" class="glass hidden" style="padding:16px">
-          <b>Clue 2:</b> Only I can call you this. The name that makes you blush whenever I whisper it. What is it?
-          <input id="a2" class="input spaced" placeholder="type answer"/>
-          <button data-next="q3" data-input="a2" data-answer="mayu">Submit</button>
-          <p class="muted spaced" id="m2"></p>
-        </div>
-        <div id="q3" class="glass hidden" style="padding:16px">
-          <b>Clue 3:</b> The month when our hearts first beat together on a date. The one that will always feel like the beginning of us.
-          <input id="a3" class="input spaced" placeholder="type answer"/>
-          <button data-next="q4" data-input="a3" data-answer="april">Submit</button>
-          <p class="muted spaced" id="m3"></p>
-        </div>
-        <div id="q4" class="glass hidden" style="padding:16px">
-          <b>Clue 4:</b> No birthday of yours is complete without your comfort food. Type in the dish that makes you happiest.
-          <input id="a4" class="input spaced" placeholder="type answer"/>
-          <button data-next="final" data-input="a4" data-answer="dalchawal">Submit</button>
-          <p class="muted spaced" id="m4"></p>
-        </div>
-      </div>
-
-      <div id="final" class="glass hidden spaced" style="padding:18px">
-        <h3>You did it! 🎉</h3>
-        <p>Here is your <b>digital gift</b>:
-          <br/>
-          <a id="gift-link" href="#" target="_blank">Surprise Link 💝</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- TIMED REVEAL -->
-    <section id="reveal" class="card">
-      <h2>Surprise Reveal 🎁</h2>
-      <div id="reveal-locked" class="">
-        <p class="muted">This unlocks at the special time.💝</p>
-        <div class="countdown spaced" id="mini-count">
-          <div class="time"><b id="rd">--</b><span>Days</span></div>
-          <div class="time"><b id="rh">--</b><span>Hours</span></div>
-          <div class="time"><b id="rm">--</b><span>Mins</span></div>
-          <div class="time"><b id="rs">--</b><span>Secs</span></div>
-        </div>
-      </div>
-      <div id="reveal-body" class="glass hidden" style="padding:18px">
-        <h3>Now, look beside you…💝</h3>
-        <p>Your real gift is waiting. (And yes, I’m grinning.)</p>
-        <video id="reveal-video" controls class="spaced" style="width:100%; border-radius:12px">
-          <source src="" type="video/mp4">
-        </video>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Made with <span class="heart">♥</span> for <b>Mayu</b>. &nbsp; © <span id="year"></span>
-  </footer>
-
-  <div id="confetti" class="confetti" aria-hidden="true"></div>
+    <div id="treasureGift" style="display:none; margin-top:20px;">
+      <p>Congratulations, Mayu! ❤️ You’ve solved every clue, just like you’ve solved every part of me.</p>
+      <a href="gift/happy-birthday.mp4" target="_blank">🎁 Open Your Surprise</a>
+    </div>
+  </section>
 
   <script>
-    // ======= CONFIG =======
-    const HER_NAME = "Mayu";
-    const REVEAL_AT = "2025-09-07T19:00:00+05:30"; // 7:00 PM IST
-    const MAIN_EVENT_AT = "2025-09-07T00:00:00+05:30"; // midnight
-    const LETTER_PW_SHA256_HEX = "631a93ea856938722b42098f0f4758c9a0bc619e5512963b15eeb2638bfc84f7"; // hash of "Mayu"
-
-    // ======= UTIL =======
-    const $ = s => document.querySelector(s);
-    const $$ = s => Array.from(document.querySelectorAll(s));
-    const pad = n => n.toString().padStart(2,'0');
-
-    function diff(targetISO){
-      const now = new Date();
-      const t = new Date(targetISO);
-      const ms = Math.max(0, t - now);
-      const d = Math.floor(ms/86400000);
-      const h = Math.floor((ms%86400000)/3600000);
-      const m = Math.floor((ms%3600000)/60000);
-      const s = Math.floor((ms%60000)/1000);
-      return { ms, d, h, m, s };
-    }
-
-    function setCountdown(elPrefix, targetISO){
-      function tick(){
-        const {d,h,m,s} = diff(targetISO);
-        $(`#${elPrefix}d`).textContent = pad(d);
-        $(`#${elPrefix}h`).textContent = pad(h);
-        $(`#${elPrefix}m`).textContent = pad(m);
-        $(`#${elPrefix}s`).textContent = pad(s);
+    // 🎂 Countdown
+    const birthday = new Date("Sep 7, 2025 00:00:00").getTime();
+    const timer = document.getElementById("timer");
+    setInterval(() => {
+      let now = new Date().getTime();
+      let distance = birthday - now;
+      if (distance < 0) {
+        timer.innerText = "🎉 Happy Birthday, Mayu! ❤️";
+        return;
       }
-      tick();
-      return setInterval(tick, 1000);
-    }
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      timer.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
 
-    async function sha256Hex(str){
-      const enc = new TextEncoder();
-      const data = enc.encode(str);
-      const hash = await crypto.subtle.digest('SHA-256', data);
-      return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
-    }
-
-    function celebrate(){
-      const root = $('#confetti');
-      root.innerHTML = '';
-      const EMOJIS = ['✨','💖','🎉','🎈','💝'];
-      for(let i=0;i<60;i++){
-        const span = document.createElement('span');
-        span.textContent = EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
-        span.style.left = Math.random()*100 + 'vw';
-        span.style.animationDuration = (6+Math.random()*4)+'s';
-        span.style.transform = `translateY(0) rotate(${Math.random()*360}deg)`;
-        root.appendChild(span);
-      }
-      setTimeout(()=>root.innerHTML='', 12000);
-    }
-
-    // ======= INIT =======
-    $('#year').textContent = new Date().getFullYear();
-    setCountdown('', MAIN_EVENT_AT);
-    const mini = setCountdown('r', REVEAL_AT);
-
-    function checkReveal(){
-      const now = new Date();
-      if(now >= new Date(REVEAL_AT)){
-        $('#reveal-locked').classList.add('hidden');
-        $('#reveal-body').classList.remove('hidden');
-        clearInterval(mini);
-      }
-    }
-    checkReveal();
-    setInterval(checkReveal, 1000);
-
-    // Love Letter unlock
-    $('#unlock').addEventListener('click', async ()=>{
-      const pw = ($('#pw').value || '').trim();
-      const hex = await sha256Hex(pw);
-      if(hex === LETTER_PW_SHA256_HEX){
-        $('#lockbox').classList.add('hidden');
-        const body = $('#letter-body');
-        body.classList.remove('hidden');
-        body.setAttribute('aria-hidden','false');
-        localStorage.setItem('letterUnlocked','1');
+    // 💌 Love Letter Unlock (Password = "Mayu")
+    const LETTER_PW_SHA256_HEX = "631a93ea856938722b42098f0f4758c9a0bc619e5512963b15eeb2638bfc84f7";
+    async function unlockLetter() {
+      const input = document.getElementById("letterPassword").value;
+      const enc = new TextEncoder().encode(input);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", enc);
+      const hashHex = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+      if (hashHex === LETTER_PW_SHA256_HEX) {
+        document.getElementById("loveLetter").style.display = "block";
       } else {
-        $('#pwmsg').textContent = 'That did not work, my love. Try again ♥';
+        alert("Wrong password, try again ❤️");
       }
-    });
-
-    if(localStorage.getItem('letterUnlocked')==='1'){
-      $('#lockbox').classList.add('hidden');
-      $('#letter-body').classList.remove('hidden');
-      $('#letter-body').setAttribute('aria-hidden','false');
     }
 
-    // Treasure hunt
-    $$('button[data-next]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const nextId = btn.getAttribute('data-next');
-        const inputId = btn.getAttribute('data-input');
-        const answer = (btn.getAttribute('data-answer')||'').toLowerCase().trim();
-        const val = (($('#'+inputId).value)||'').toLowerCase().replace(/\s+/g,'').trim();
-        const msg = $('#m'+inputId.replace('a',''));
-        if(val === answer){
-          msg.textContent = 'Correct!';
-          $('#'+nextId).classList.remove('hidden');
-          if(nextId === 'final'){
-            celebrate();
-            localStorage.setItem('huntComplete','1');
-          }
-        } else {
-          msg.textContent = 'Close… think like us ♥';
-        }
-      });
-    });
+    // 🔎 Treasure Hunt Logic
+    function checkClue1() {
+      let ans = document.getElementById("answer1").value.trim().toLowerCase();
+      if (ans === "dyu art cafe" || ans === "dyu cafe") {
+        document.getElementById("result1").innerText = "Correct! ❤️";
+        document.getElementById("clue2").style.display = "block";
+      } else {
+        document.getElementById("result1").innerText = "Try again 😘";
+      }
+    }
 
-    if(localStorage.getItem('huntComplete')==='1'){
-      $('#final').classList.remove('hidden');
+    function checkClue2() {
+      let ans = document.getElementById("answer2").value.trim().toLowerCase();
+      if (ans === "mayu") {
+        document.getElementById("result2").innerText = "Perfect, Mayu! 💕";
+        document.getElementById("clue3").style.display = "block";
+      } else {
+        document.getElementById("result2").innerText = "Nope 😜";
+      }
+    }
+
+    function checkClue3() {
+      let ans = document.getElementById("answer3").value.trim().toLowerCase();
+      if (ans === "april") {
+        document.getElementById("result3").innerText = "Yesss 🌸";
+        document.getElementById("clue4").style.display = "block";
+      } else {
+        document.getElementById("result3").innerText = "Not this one… 😉";
+      }
+    }
+
+    function checkClue4() {
+      let ans = document.getElementById("answer4").value.trim().toLowerCase();
+      if (ans === "dal chawal") {
+        document.getElementById("result4").innerText = "You did it, love! 🎉";
+        document.getElementById("treasureGift").style.display = "block";
+      } else {
+        document.getElementById("result4").innerText = "Almost there ❤️";
+      }
     }
   </script>
 </body>
