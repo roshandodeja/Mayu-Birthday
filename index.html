@@ -97,6 +97,20 @@
     @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: .95 } }
   </style>
 </head>
+  <!-- ====== Reset Buttons (For Testing Only) ====== -->
+<div style="position:fixed; bottom:10px; right:10px; display:flex; flex-direction:column; gap:6px; opacity:0.2; z-index:999;">
+  <!-- Reset Love Letter -->
+  <button onclick="localStorage.removeItem('letterUnlocked'); location.reload();" 
+          style="padding:4px 8px; font-size:11px; border-radius:6px; cursor:pointer;">
+    Reset Letter 🔄
+  </button>
+
+  <!-- Reset Treasure Hunt -->
+  <button onclick="localStorage.removeItem('huntComplete'); location.reload();" 
+          style="padding:4px 8px; font-size:11px; border-radius:6px; cursor:pointer;">
+    Reset Hunt 🗝️
+  </button>
+</div>
 <body>
   <nav>
     <div class="container row">
