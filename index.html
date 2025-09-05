@@ -349,39 +349,48 @@
     }
 
     // Treasure hunt flow (case-insensitive, trim; developer note: answers must be lowercase, no spaces)
-    $$('button[data-next]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const nextId = btn.getAttribute('data-next');
-        const inputId = btn.getAttribute('data-input');
-        const answer = (btn.getAttribute('data-answer')||'').toLowerCase().trim();
-        const val = (($('#'+inputId).value)||'').toLowerCase().replace(/\s+/g,'').trim();
-        const msg = $('#m'+inputId.replace('a',''));
-        if(!answer || answer==='/* todo: e.g. collegecafe */'.toLowerCase()){
-          alert('Developer: set the correct answer in the HTML (data-answer attribute)');
-          return;
-        }
-        if(val === answer){
-          msg.textContent = 'Correct!';
-          $('#'+nextId).classList.remove('hidden');
-          if(nextId === 'final'){
-            celebrate();
-            localStorage.setItem('huntComplete','1');
-          }
-        } else {
-          msg.textContent = 'Close… think like us ♥';
-        }
-      });
-    });
+    function checkClue1() {
+  let ans = document.getElementById("answer1").value.trim().toLowerCase();
+  if (ans === "dyu art cafe" || ans === "dyu cafe") {
+    document.getElementById("result1").innerText = "Correct! ❤️";
+    document.getElementById("clue2").style.display = "block";
+  } else {
+    document.getElementById("result1").innerText = "Try again 😘";
+  }
+}
 
-    // Persist treasure hunt completion
-    if(localStorage.getItem('huntComplete')==='1'){
-      $('#final').classList.remove('hidden');
-    }
+function checkClue2() {
+  let ans = document.getElementById("answer2").value.trim().toLowerCase();
+  if (ans === "mayu") {
+    document.getElementById("result2").innerText = "Perfect, Mayu! 💕";
+    document.getElementById("clue3").style.display = "block";
+  } else {
+    document.getElementById("result2").innerText = "Nope 😜";
+  }
+}
 
-    // Tiny UX: replace name tokens if user filled HER_NAME
-    if(HER_NAME && !HER_NAME.includes('TODO')){
-      document.body.innerHTML = document.body.innerHTML.replaceAll('/* TODO: Her Name */', HER_NAME);
+function checkClue3() {
+  let ans = document.getElementById("answer3").value.trim().toLowerCase();
+  if (ans === "april") {
+    document.getElementById("result3").innerText = "Yesss 🌸";
+    document.getElementById("clue4").style.display = "block";
+  } else {
+    document.getElementById("result3").innerText = "Not this one… 😉";
+  }
+}
+
+function checkClue4() {
+  let ans = document.getElementById("answer4").value.trim().toLowerCase();
+  if (ans === "dal chawal") {
+    document.getElementById("result4").innerText = "You did it, love! 🎉";
+    document.getElementById("treasureGift").style.display = "block";
+    // optional confetti
+    if (typeof confetti !== "undefined") {
+      confetti();
     }
+  } else {
+    document.getElementById("result4").innerText = "Almost there ❤️";
+  }
   </script>
 </body>
 </html>
